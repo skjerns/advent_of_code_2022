@@ -5,7 +5,7 @@ Created on Mon Dec  5 08:32:29 2022
 @author: Simon
 """
 
-# I dedicate these comments to Gordon Feld, who 
+# I dedicate these comments to Gordon Feld, who always eagerly reads them
 with open('day05_input.txt', 'r') as f:
     c = f.read()
     
