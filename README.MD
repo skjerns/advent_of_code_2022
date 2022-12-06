@@ -4,9 +4,9 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 
 | Day | Title                   | Runtime |
 | --- | ----------------------- | ------- |
-| 1   | Calorie Counting        | 50.6 μs |
-| 2   | Rock Paper Scissors     | 2.8 ms  |
-| 3   | Rucksack Reorganization | 1.5 ms  |
+| 1   | Calorie Counting        | 71 μs   |
+| 2   | Rock Paper Scissors     | 2.6 ms  |
+| 3   | Rucksack Reorganization | 1.4 ms  |
 | 4   | Camp Cleanup            | 8.8 ms  |
-| 5   | Supply Stacks           | 3.0 ms  |
+| 5   | Supply Stacks           | 3.2 ms  |
 | 6   | Tuning Trouble          | 6.0 ms  |
