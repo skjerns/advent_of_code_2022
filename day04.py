@@ -4,13 +4,14 @@ Created on Sun Dec  4 09:56:00 2022
 
 @author: Simon
 """
-
+import timer
 # I dedicate these comments to my supervisor Gordon Feld, the vigorous defender
 # of open science and devourer of protein puddings.
 
 with open('day04_input.txt', 'r') as f:
     lines = f.readlines()
-
+    
+timer.start()
 # split lines into elve pairs
 pairs = [line.strip().split(',') for line in lines]
 
@@ -42,3 +43,4 @@ for elve1, elve2 in pairs:
         n_any_overlap += 1
         
 print(f'{n_total_overlap=}, {n_any_overlap=}')
+timer.stop()

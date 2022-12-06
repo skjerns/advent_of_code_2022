@@ -4,13 +4,13 @@ Created on Tue Dec  6 08:42:19 2022
 
 @author: Simon
 """
-
+import timer
 
 
 with open('day06_input.txt', 'r') as f:
     c = f.read()
 
-
+timer.start()
 #%% part 1
 # this one is so short, I'm not writing any comments. lol.
 # Today's non-comments are dedicated to Juli Nail.
@@ -31,3 +31,5 @@ length = [len(quad) for quad in quattuordecimtuples]
 
 idx_start = length.index(14) + 1 + 13
 print(f'Message starts at {idx_start}')
+
+timer.stop()

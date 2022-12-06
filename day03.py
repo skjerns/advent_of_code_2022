@@ -4,13 +4,14 @@ Created on Sat Dec  3 08:31:24 2022
 
 @author: Simon
 """
-
+import timer
 
 # some code annotation, especially for you, Gordon! :P
 with open('day03_input.txt', 'r') as f:
     c = f.read()
-    # convert to rucksack, last line is empty, so skip
-    rucksacks = c.split('\n')[:-1]
+timer.start()
+# convert to rucksack, last line is empty, so skip
+rucksacks = c.split('\n')[:-1]
 
 #%% Part 1
 # create map of priorities
@@ -58,3 +59,4 @@ for i in range(0, len(rucksacks), 3):
     priority_sum += priority_map[same_item.pop()]
     
 print(f'Part 2 priority sum is {priority_sum}')
+timer.stop()

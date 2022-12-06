@@ -4,7 +4,12 @@ Created on Fri Dec  2 08:35:46 2022
 
 @author: Simon
 """
+import timer
 
+with open('day02_input.txt', 'r') as f:
+    matches = [l.strip() for l in f.readlines()]    
+
+timer.start()
 scores = {x:i+1 for i, x in enumerate(['rock', 'paper', 'scissors'])}
 
 mapping1 = {'A': 'rock',
@@ -13,11 +18,6 @@ mapping1 = {'A': 'rock',
             'X': 'rock',
             'Y': 'paper',
             'Z': 'scissors'}
-
-with open('day02_input.txt', 'r') as f:
-    matches = [l.strip() for l in f.readlines()]    
-
-
 #%% part 1
 points = 0
 for match in matches:
@@ -59,3 +59,4 @@ for match in matches:
     
     points += scores[need_to_play]
     points +=scores_game_type[signs[1]]
+timer.stop()

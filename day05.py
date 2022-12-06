@@ -4,15 +4,16 @@ Created on Mon Dec  5 08:32:29 2022
 
 @author: Simon
 """
-
+import timer
 # I dedicate these comments to Gordon Feld, who always eagerly reads them
 with open('day05_input.txt', 'r') as f:
     c = f.read()
     
-    basestack, instructions = c.split('\n\n')
-    basestack = basestack.split('\n')
-    instructions = instructions.split('\n')[:-1]  # last line is empty
-    
+timer.start()
+basestack, instructions = c.split('\n\n')
+basestack = basestack.split('\n')
+instructions = instructions.split('\n')[:-1]  # last line is empty
+
     
 #%% Part 1
 # we solve this problem with stacks using ... a STACK
@@ -83,3 +84,4 @@ for instr_str in instructions:
         dock[to_i-1].append(item)
         
 print('the upper item for each stack is', ''.join([stack[-1] for stack in dock]))
+timer.stop()
