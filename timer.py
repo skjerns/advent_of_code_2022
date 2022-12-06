@@ -4,34 +4,38 @@ Created on Tue Dec  6 13:33:23 2022
 
 @author: Simon
 """
-import time
+import timeit
 _start = [None]
 
-def _print_time(seconds):    
-    if seconds > 7200:
-        hours   = seconds//3600
-        minutes = seconds//60 - hours*60
-        return "{:.0f}:{:02.0f} hours".format(hours, minutes)
-    elif seconds > 180:
-        minutes = seconds//60
-        seconds = seconds%60
-        return "{:.0f}:{:02.0f} min".format(minutes , seconds)
-    elif seconds >= 1:
-        return "{:02.1f} sec".format(seconds)
-    elif seconds > 0.01:
-        return "{} ms".format(int(seconds*1000))
-    elif seconds > 0.001:
-        return "{:.1f} ms".format(seconds*1000)
-    elif seconds > 0.0001:
-        return "{:.1f} μs".format(seconds*100000)
-    else:
-        return "{} nanoseconds".format(int(seconds*1e-9))
-   
+
+def nanoseconds_to_human_readable(seconds: int) -> str:
+    nanoseconds = seconds*10**9
+    microseconds = nanoseconds / 1000
+    if microseconds < 1000:
+        return f"{microseconds:.0f} µs"
+    
+    millisecond = microseconds / 1000
+    if millisecond < 1000:
+        return f"{microseconds:.0f} ms"
+       
+
+    seconds = microseconds / 1000
+    if seconds < 60:
+        return f"{seconds:.2f} sec"
+
+    minutes = seconds / 60
+    if minutes < 60:
+        leftover_seconds = seconds % 60
+        return f"{minutes:.0f} minutes, {leftover_seconds:.0f} seconds"
+
+    hours = minutes / 60
+    leftover_minutes = minutes % 60
+    return f"{hours:.0f} hours, {leftover_minutes:.0f} minutes"
 
 def start():
-    _start[0] = time.time()
+    _start[0] = timeit.default_timer()
 
 def stop(x=''):
-    elapsed = time.time()-_start[0]
-    print(f'took {_print_time(elapsed)}')
+    elapsed = timeit.default_timer()-_start[0]
+    print(f'took {nanoseconds_to_human_readable(elapsed)}')
     return elapsed

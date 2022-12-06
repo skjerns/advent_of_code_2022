@@ -6,7 +6,6 @@ Created on Thu Dec  1 08:32:27 2022
 """
 import timer
 
-
 with open('day01_input.txt', 'r') as f:
     c = f.read()
     

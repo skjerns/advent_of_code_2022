@@ -5,10 +5,12 @@ Created on Fri Dec  2 08:35:46 2022
 @author: Simon
 """
 import timer
+import timeit
 
 with open('day02_input.txt', 'r') as f:
     matches = [l.strip() for l in f.readlines()]    
-
+    
+    
 timer.start()
 scores = {x:i+1 for i, x in enumerate(['rock', 'paper', 'scissors'])}
 
