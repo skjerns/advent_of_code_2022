@@ -11,8 +11,13 @@ with open('day07_input.txt', 'r') as f:
     
 
 #%% part 1
- # today we will be using some object oriented programming
-# we will simulate a filesystem. The filesystem has 
+# today we will be using some object oriented programming (OOP)
+# we will simulate a filesystem. The file system has Folders and Files.
+# each Folder can have subfolders, which is just a list of Folders.
+# additionally, each folder can have a File, which has a size.
+# it is possible to recursively walk through the file system and list
+# all files and folders in it. Each Folder is able to calculate the size
+# of all subfolders recursively
 
 timer.start()
 class File():
@@ -26,21 +31,24 @@ class File():
 
 class Folder():
     def __init__(self, name, parent):
+        """each folder has a name, subfolders and files, and a parent folder"""
         self.name = name
-        self.folders = {}
+        self.subfolders = {}
         self.files = []
         self.parent = parent
         
     def get_size(self):
+        """recursively get the size of all subfolders and the current folder"""
         size = sum([file.size for file in self.files])
-        size += sum([folder.get_size() for folder in self.folders.values()])
+        size += sum([folder.get_size() for folder in self.subfolders.values()])
         return size
 
     def add(self, command):
+        """add either a file or a folder to the file system"""
         pre, name = command.split(' ', 1)
         if pre=='dir':
             folder = Folder(name, self)
-            self.folders[name] = folder
+            self.subfolders[name] = folder
         elif pre.isnumeric():
             file = File(name, int(pre), self)
             self.files.append(file)
@@ -52,9 +60,11 @@ class Folder():
         return string
     
     def __getitem__(self, key):
-        return self.folders[key]
+        return self.subfolders[key]
     
     def tree(self, indent=2):
+        """prints the file and folder tree of this Folder.
+        mainly used for debugging, in the end I didn't need it"""
         print('-' *(indent-4) + str(self) )
         for file in self.files:
             print('-'*indent + str(file))
@@ -63,10 +73,11 @@ class Folder():
     
     
     def walk(self):
-        subfolders = []
-        for folder in self.folders.values():
-            subfolders += folder.walk()
-        return [self] + subfolders
+        """get a list of all folders and their subfolders"""
+        all_subfolders = []
+        for folder in self.subfolders.values():
+            all_subfolders += folder.walk()
+        return [self] + all_subfolders
 
 root = Folder('', '')
 
@@ -87,7 +98,7 @@ for cmd in commands[1:-1]:
                 curr_folder = curr_folder.parent
             else:
                 # print(f'{cmd}: moving into {parts[2]}')
-                curr_folder = curr_folder.folders[parts[2]]
+                curr_folder = curr_folder.subfolders[parts[2]]
         elif parts[1]=='ls':
             # print(f'{cmd}: listing folders of {curr_folder}')
             pass
