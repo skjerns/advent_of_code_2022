@@ -1,6 +1,6 @@
 ## Runtime statistics
 
-I did not optimize my code for performance, but here are the numbers on my AMD Ryzen 9 3900X 12-Core Processor (of which of course only 1 is used due to the Python GIL) with 3.8 Ghz and 32 GB RAM. All runtimes exclude the initial reading from disk, but include all other operation like parsing, splitting and filtering the input.
+I did not optimize my code for performance, but here are the numbers on my AMD Ryzen 9 3900X 12-Core Processor (of which of course only 1 is used due to the Python GIL) with 3.8 Ghz and 32 GB RAM. All runtimes exclude the initial reading from disk and all debug print statements, but include all other operation like parsing, splitting and filtering the input.
 
 | Day | Title                   | Runtime |
 | --- | ----------------------- | ------- |
@@ -10,3 +10,4 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 4   | Camp Cleanup            | 8.8 ms  |
 | 5   | Supply Stacks           | 3.2 ms  |
 | 6   | Tuning Trouble          | 6.0 ms  |
+| 7   | No Space Left On Device | 2.9 ms  |
