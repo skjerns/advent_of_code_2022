@@ -26,8 +26,9 @@ grid_rows = [row for row in grid]
 
 trees_visible = 0
 
-# I tried it in a smart way and could not get it to work within 30 minutes
-# now let's just do it the stupid way and iterate over every tree
+# I tried it in a smart way using argmax and could not get it to work 
+# within 30 minutes. I think I overcomplicated things a bit.
+# Now let's just do it the stupid way and iterate over every tree
 for r, c in itertools.product(*[np.arange(len(grid))]*2):
     tree_height = grid[r, c]
     row = grid[r, :].copy()   # create copy to prevent inplace modification
@@ -46,18 +47,13 @@ print('part 1:', trees_visible)
 
 #%% part 2
 
-# grid = np.array([3,0,3,7,3,
-#         2,5,5,1,2,
-#         6,5,3,3,2,
-#         3,3,5,4,9,
-#         3,5,3,9,0]).reshape([5, 5])
 
 grid = grid.astype(float)
+
 # I did not even try to do this in a smart way 
 # now let's just do it the stupid way and iterate over every tree
 
 scores = []
-
 for r, c in itertools.product(*[np.arange(len(grid))]*2):
     tree_height = grid[r, c]
     row = grid[r, :].copy()   # create copy to prevent inplace modification
@@ -72,7 +68,9 @@ for r, c in itertools.product(*[np.arange(len(grid))]*2):
     col[col>=0] = np.inf
 
     dists = []
-    # going clockwise
+    # going clockwise in each direction from the tree to the outside
+    # add a 99 to each end to check if we have reached the end of the board.
+    # if not, add 1 to the count, as the blocking tree also counts
     if c<len(grid)-1:
         direction = [*row[c+1:], 99]
         dist = np.argmax(direction)
@@ -106,7 +104,6 @@ for r, c in itertools.product(*[np.arange(len(grid))]*2):
 
 
     scenic_score = np.product(dists)
-    
     scores.append(scenic_score)
 
 print('part 2:', max(scores))
