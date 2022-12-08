@@ -79,7 +79,8 @@ class Folder():
             all_subfolders += folder.walk()
         return [self] + all_subfolders
 
-root = Folder('', '')
+#%%
+root = Folder('', '')  # create root Folder, it has no name and no parent
 
 # now write a parser that loops through all commands
 commands = c.split('\n')

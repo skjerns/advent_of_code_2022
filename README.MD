@@ -11,3 +11,4 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 5   | Supply Stacks           | 3.2 ms  |
 | 6   | Tuning Trouble          | 6.0 ms  |
 | 7   | No Space Left On Device | 2.9 ms  |
+| 8   | Treetop Tree House      | 675 ms  |
