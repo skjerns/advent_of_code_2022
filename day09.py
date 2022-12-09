@@ -58,7 +58,7 @@ def plot_grid(head, pause=0.01):
 # this sound like fun!!
 # I liked using OOP in the last exercise, to let's do it again
 
-
+timer.start()
 @dataclass(frozen=True)
 class Position():
     x:int = 0
@@ -156,7 +156,7 @@ head.attach(tail)
 
 for cmd in c.split('\n')[:-1]:
     head.move(cmd)
-grid = plot_grid(head)
+# grid = plot_grid(head)
 
 print(len(set(tail.pos_history)))
 # asd
@@ -178,8 +178,8 @@ for i, cmd in enumerate(c.split('\n')[:-1]):
         # grid = plot_grid(head)
         # break
     head.move(cmd)
-    s
-    plot_grid(head)
+    # s
+    # plot_grid(head)
 
-
-
+print(len(set(tail.pos_history)))
+timer.stop()
