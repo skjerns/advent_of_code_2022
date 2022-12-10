@@ -13,3 +13,4 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 7   | No Space Left On Device | 2.9 ms  |
 | 8   | Treetop Tree House      | 675 ms  |
 | 9   | Rope Bridge             | 478 ms  |
+| 10  | Cathode-Ray Tube        | 52 μs   |
