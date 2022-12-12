@@ -15,9 +15,10 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 9   | Rope Bridge               | 478 ms  |
 | 10  | Cathode-Ray Tube          | 52 μs   |
 | 11  | Monkey in the Middle [^2] | 4.9 s   |
+| 12  | Hill Climbing Algorithm   | 2.0 s   |
 
 [^1]: I did not finish this one completely and needed to look up some hints for part 1
 
-[^2]: I did not finish this one completely and needed to look up some hints for part 2
+[^2]: I did not finish this one completely and needed to look up some hints for part 2. I was on the right track, and the hints confirmed it.
 
 [^3]: I could not finish this puzzle
