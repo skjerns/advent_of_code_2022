@@ -14,7 +14,7 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 8   | Treetop Tree House        | 675 ms  |
 | 9   | Rope Bridge               | 478 ms  |
 | 10  | Cathode-Ray Tube          | 52 μs   |
-| 11  | Monkey in the Middle [^1] | 4.9 s   |
+| 11  | Monkey in the Middle [^2] | 4.9 s   |
 
 [^1]: I did not finish this one completely and needed to look up some hints for part 1
 
