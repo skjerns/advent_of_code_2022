@@ -16,10 +16,8 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 10  | Cathode-Ray Tube            | 52 μs   |
 | 11  | Monkey in the Middle [^pt2] | 4.9 s   |
 
+[^pt1]: I did not finish this one completely and needed to look up some hints for part 1
 
+[^pt2]: I did not finish this one completely and needed to look up some hints for part 2
 
-[^pt1] I did not finish this one completely and needed to look up some hints for part 1
-
-[^pt2] I did not finish this one completely and needed to look up some hints for part 2
-
-[^T] I could not finish this puzzle
+[^T]: I could not finish this puzzle
