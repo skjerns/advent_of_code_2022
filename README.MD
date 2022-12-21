@@ -17,6 +17,8 @@ I did not optimize my code for performance, but here are the numbers on my AMD R
 | 11  | Monkey in the Middle [^2] | 4.9 s   |
 | 12  | Hill Climbing Algorithm   | 2.0 s   |
 | 13  | Distress Signal           | 560 ms  |
+| 14  | Regolith Reservoir        | 2.7 s   |
+| 15  | Beacon Exclusion Zone     | 30 s    |
 
 [^1]: I did not finish this one completely and needed to look up some hints for part 1
 
